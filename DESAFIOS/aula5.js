@@ -46,30 +46,16 @@ const pessoa4 = {
   idade: 18
 }
 
-const pessoas = [ pessoa0, pessoa1, pessoa2, pessoa3, pessoa4 ];
+const pessoas = [
+  pessoa0,
+  pessoa1,
+  pessoa2,
+  pessoa3,
+  pessoa4,
+]
 
-
-
-// pegando o item 0 da lista de pessoas e mostrando o valor
-const itemZeroDaLista = pessoas[0];
-console.log( `Esse é o item zero da lista: ${itemZeroDaLista}` );
-
-
-
-// pegando o valor da propriedade nome da pessoa 2 e mostrando o valor
-const valorDaPropriedadeNomeDoObjetoPessoa2 = pessoa2.nome;
-console.log( `Esse é o valor da propriedade nome da pessoa 2: ${valorDaPropriedadeNomeDoObjetoPessoa2}` );
-
-
-
-// usando a propriedade idade do objeto pessoa4 para comparar se é maior ou igual a 18, e se for verdade ele irá mostrar o nome da pessoa
-if(pessoa4.idade >= 18){
-  console.log( `A ${pessoa4.nome} pode ir ao show pois tem 18 anos ou mais` )
-}
-
-
-
-// a mesma coisa do exemplo anterior, porém usando os colchetes [] para acessar o item e logo depois usar a propriedade idade, caso for verdadeiro irá mostra o nome do item
-if(pessoas[4].idade >= 18){
-  console.log( `A ${pessoas[4].nome} pode ir ao show pois tem 18 anos ou mais` )
-}
+pessoas.forEach((pessoa) => {
+  if (pessoa.idade >= 18){
+    console.log(pessoa.nome, "pode ir ao show")
+  }
+})

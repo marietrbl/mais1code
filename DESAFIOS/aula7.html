@@ -48,7 +48,7 @@
     </div>
 
     <script>
-      const inputIngredientes = document.getElementById("ïnput.ingrediente");
+      const inputIngredientes = document.getElementById("input-ingredientes");
       const buttonAdicionar = document.getElementById("button-adicionar-ingrediente");
       const ulIngredientes = document.getElementById("ul-ingredientes");
 
@@ -63,13 +63,7 @@
 
       }
 
-      document.addEventListener('keydown', event => {
-        if (event.key === "Enter") return;{
-          AdicionaIngrediente();
-        }
-      } );
-
-      const inputPassos = document.getElementById("ïnput.passos");
+      const inputPassos = document.getElementById("input-passos");
       const buttonAdicionarPassos = document.getElementById("button-adicionar-passos");
       const olPassos = document.getElementById("ol-passos");
 
@@ -81,9 +75,23 @@
 
         inputPassos.value = "";
         inputPassos.focus();
-
       };
-     
+
+
+      document.addEventListener('keydown', event => {
+        if (event.key === "Enter"){
+          if (document.activeElement === inputIngredientes){
+            AdicionaIngrediente()
+          }
+
+          if (document.activeElement === inputPassos){
+            AdicionaPassos()
+          }
+
+        }
+      });
+
+           
     </script>
   </body>
 </html>
